@@ -79,6 +79,17 @@ const CustomTheme = createTheme({
         },
       },
     },
+    MuiGrid: {
+      styleOverrides: {
+        root: {
+          "&.formBackground": {
+            paddingLeft: "1rem",
+            paddingRight: "1rem",
+            backgroundColor: colors.white.dark,
+          },
+        },
+      },
+    },
   },
 });
 
