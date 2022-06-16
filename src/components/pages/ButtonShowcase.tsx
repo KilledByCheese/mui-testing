@@ -1,4 +1,3 @@
-import { ThemeProvider } from "@emotion/react";
 import { Button, Container, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { Box } from "@mui/system";
@@ -28,10 +27,8 @@ function ButtonShowcase() {
         <Grid item xs={4}>
           <Stack spacing={2}>
             <h2>Customized Buttons (Theme): </h2>
-            <ThemeProvider theme={CustomTheme}>
-              <Button variant="cancelButton">Abbrechen</Button>
-              <Button variant="confirmButton">Speichern</Button>
-            </ThemeProvider>
+            <Button variant="cancelButton">Abbrechen</Button>
+            <Button variant="confirmButton">Speichern</Button>
           </Stack>
         </Grid>
       </Grid>
