@@ -8,6 +8,23 @@ declare module "@mui/material/Button" {
   }
 }
 
+const colors = {
+  blue: {
+    adesso: "#006EC7",
+    dark: "#003D69",
+    light: "#90B0DB",
+    grey: "#E7EFF9",
+  },
+  grey: {
+    dark: "#707070",
+    light: "#BEBEBE",
+  },
+  white: {
+    dark: "#EEF1F7",
+    light: "#F6F8FB",
+  },
+};
+
 const CustomTheme = createTheme({
   components: {
     MuiButton: {
@@ -15,28 +32,45 @@ const CustomTheme = createTheme({
         {
           props: { variant: "cancelButton" },
           style: {
+            textTransform: "none",
             color: "white",
             borderRadius: "15px",
-            backgroundColor: "#BEBEBE",
+            backgroundColor: colors.grey.light,
             ":hover": {
-              backgroundColor: "#707070",
+              backgroundColor: colors.grey.dark,
             },
           },
         },
         {
           props: { variant: "confirmButton" },
           style: {
+            textTransform: "none",
             color: "white",
             borderRadius: "15px",
-            backgroundColor: "#003D69",
+            backgroundColor: colors.blue.dark,
             ":hover": {
-              backgroundColor: "#006EC7",
+              backgroundColor: colors.blue.adesso,
             },
           },
         },
       ],
       defaultProps: {
         disableRipple: true, // No more ripple, on the whole application 💣!
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          // this is styles for the new variants
+          "&.subvariant-custom": {
+            "& fieldset": {
+              color: colors.grey.dark,
+              border: "none",
+              borderRadius: "0",
+              borderBottom: `1px solid ${colors.blue.adesso} `,
+            },
+          },
+        },
       },
     },
   },
