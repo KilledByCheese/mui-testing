@@ -4,13 +4,18 @@ import { styled } from "@mui/material/styles";
 import * as React from "react";
 
 const MyButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  color: theme.palette.getContrastText(purple[500]),
-  backgroundColor: purple[500],
-  "&:hover": {
-    backgroundColor: purple[700],
+  display: "inline-block",
+  width: "fit-content",
+  minWidth: "8rem",
+  textTransform: "none",
+  color: "white",
+  borderRadius: "15px",
+  backgroundColor: "#003D69",
+  ":hover": {
+    backgroundColor: "#006EC7",
   },
 }));
 
-export default function StyledButton({ ...methods }: ButtonProps) {
+export default function ConfirmButton({ ...methods }: ButtonProps) {
   return <MyButton {...methods} />;
 }

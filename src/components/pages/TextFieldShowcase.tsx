@@ -3,7 +3,7 @@ import Grid from "@mui/material/Grid";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { CustomTheme } from "../../themes/CustomTheme";
-import StyledButton from "../styledComponents/CustomButton";
+import StyledButton from "../styledComponents/CustomCancelButton";
 import StyledTextField from "../styledComponents/CustomTextField";
 
 function TextFieldShowcase() {

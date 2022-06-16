@@ -1,9 +1,9 @@
-import { Button, Container, Stack } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { Box } from "@mui/system";
 import React from "react";
-import { CustomTheme } from "../../themes/CustomTheme";
-import StyledButton from "../styledComponents/CustomButton";
+import CancelButton from "../styledComponents/CustomCancelButton";
+import ConfirmButton from "../styledComponents/CustomConfirmButton copy";
 
 function ButtonShowcase() {
   return (
@@ -20,8 +20,8 @@ function ButtonShowcase() {
           <Stack spacing={2}>
             <h2>Customized Buttons (reusable Components): </h2>
 
-            <StyledButton>Abbrechen</StyledButton>
-            <StyledButton>Speichern</StyledButton>
+            <CancelButton>Abbrechen</CancelButton>
+            <ConfirmButton>Speichern</ConfirmButton>
           </Stack>
         </Grid>
         <Grid item xs={4}>
