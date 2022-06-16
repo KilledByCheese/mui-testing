@@ -20,6 +20,8 @@ import ButtonShowcase from "../pages/ButtonShowcase";
 import Home from "../pages/Home";
 import TextFieldShowcase from "../pages/TextFieldShowcase";
 import MenuItem from "./MenuItem";
+import FormatAlignJustifyIcon from "@mui/icons-material/FormatAlignJustify";
+import FormShowcase from "../pages/FormShowcase";
 
 const drawerWidth = 240;
 
@@ -120,6 +122,11 @@ export default function Menu() {
       link: "textFieldShowCase",
       icon: <KeyboardIcon />,
     },
+    {
+      display: "Form",
+      link: "form",
+      icon: <FormatAlignJustifyIcon />,
+    },
   ];
 
   return (
@@ -172,6 +179,7 @@ export default function Menu() {
           <Route path="/" element={<Home />} />
           <Route path="buttonShowCase" element={<ButtonShowcase />} />
           <Route path="textFieldShowCase" element={<TextFieldShowcase />} />
+          <Route path="form" element={<FormShowcase />} />
         </Routes>
       </Box>
     </Box>

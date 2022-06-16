@@ -32,6 +32,9 @@ const CustomTheme = createTheme({
         {
           props: { variant: "cancelButton" },
           style: {
+            display: "inline-block",
+            width: "fit-content",
+            minWidth: "8rem",
             textTransform: "none",
             color: "white",
             borderRadius: "15px",
@@ -44,6 +47,9 @@ const CustomTheme = createTheme({
         {
           props: { variant: "confirmButton" },
           style: {
+            display: "inline-block",
+            width: "fit-content",
+            minWidth: "8rem",
             textTransform: "none",
             color: "white",
             borderRadius: "15px",
