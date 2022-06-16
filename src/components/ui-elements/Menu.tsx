@@ -2,6 +2,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import GamepadIcon from "@mui/icons-material/Gamepad";
 import HomeIcon from "@mui/icons-material/Home";
+import KeyboardIcon from "@mui/icons-material/Keyboard";
 import MenuIcon from "@mui/icons-material/Menu";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -17,6 +18,7 @@ import * as React from "react";
 import { Route, Routes } from "react-router-dom";
 import ButtonShowcase from "../pages/ButtonShowcase";
 import Home from "../pages/Home";
+import TextFieldShowcase from "../pages/TextFieldShowcase";
 import MenuItem from "./MenuItem";
 
 const drawerWidth = 240;
@@ -113,6 +115,11 @@ export default function Menu() {
       link: "buttonShowCase",
       icon: <GamepadIcon />,
     },
+    {
+      display: "Text Fields",
+      link: "textFieldShowCase",
+      icon: <KeyboardIcon />,
+    },
   ];
 
   return (
@@ -164,6 +171,7 @@ export default function Menu() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="buttonShowCase" element={<ButtonShowcase />} />
+          <Route path="textFieldShowCase" element={<TextFieldShowcase />} />
         </Routes>
       </Box>
     </Box>
