@@ -5,6 +5,7 @@ describe("my test spec", () => {
     cy.get(
       '[href="/form"] > .MuiListItem-root > .MuiListItemButton-root'
     ).click();
+
     cy.get("#SelectGenderType").click();
 
     cy.get('[data-value="m"]').click();
