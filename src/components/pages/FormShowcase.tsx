@@ -1,10 +1,23 @@
-import { Box, Button, Container, Grid, Stack, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  FormControl,
+  FormHelperText,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  Stack,
+  TextField,
+} from "@mui/material";
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type DataType = {
   firstname: string;
   surname: string;
+  gender: string;
 };
 
 function FormShowcase() {
@@ -18,6 +31,22 @@ function FormShowcase() {
     alert("Hello " + name);
   };
 
+  const GENDERS = [
+    {
+      value: "m",
+      label: "Male",
+    },
+    {
+      value: "f",
+      label: "female",
+    },
+    {
+      value: "d",
+      label: "Divers",
+    },
+  ];
+
+  const [gender, setGender] = useState("");
   const [firstname, setFirstname] = useState("");
   const [surname, setSurname] = useState("");
 
@@ -29,6 +58,27 @@ function FormShowcase() {
             <Grid item xs={8} className="formBackground">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <Stack spacing={2}>
+                  <FormControl>
+                    <InputLabel>Gender</InputLabel>
+                    <Select
+                      id="SelectGenderType"
+                      className="custom-input"
+                      {...register("gender", { required: true })}
+                      label="Gender"
+                      value={gender}
+                      onChange={(e) => setGender(e.target.value)}
+                      error={errors.gender !== undefined}
+                    >
+                      {GENDERS.map((option) => (
+                        <MenuItem value={option.value}>{option.label}</MenuItem>
+                      ))}
+                    </Select>
+                    {errors.gender && (
+                      <FormHelperText sx={{ color: "#d32f2f" }}>
+                        Field cannot be empty!
+                      </FormHelperText>
+                    )}
+                  </FormControl>
                   <TextField
                     className="subvariant-custom"
                     label="Firstname"
@@ -57,6 +107,7 @@ function FormShowcase() {
             <Grid item xs={4}>
               <Stack spacing={2}>
                 <h4>Your Inputs:</h4>
+                <p>Gender: {gender}</p>
                 <p>Firstname: {firstname}</p>
                 <p>Surname: {surname}</p>
               </Stack>
